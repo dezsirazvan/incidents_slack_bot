@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: rootly_slack_bot_incidents_development
+  database: rootly_slack_bot_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: rootly_slack_bot_incidents
+  #username: rootly_slack_bot
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rootly_slack_bot_incidents_test
+  database: rootly_slack_bot_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: rootly_slack_bot_incidents_production
-  username: rootly_slack_bot_incidents
-  password: <%= ENV["ROOTLY_SLACK_BOT_INCIDENTS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
