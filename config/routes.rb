@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'incidents#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post '/slackbot', to: 'slack_bot#handle'
+  post '/slackbot/actions', to: 'slack_bot#actions'
 end

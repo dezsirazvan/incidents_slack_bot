@@ -1,0 +1,23 @@
+<!-- app/components/incidents/incident_table_component.html.erb -->
+<table class="w-full table-auto">
+  <thead>
+    <tr class="text-left font-bold">
+      <th class="px-4 py-2">Title</th>
+      <th class="px-4 py-2">Description</th>
+      <th class="px-4 py-2">Severity</th>
+      <th class="px-4 py-2">Creator</th>
+      <th class="px-4 py-2">Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incidents.each do |incident| %>
+      <tr class="<%= cycle('bg-white', 'bg-gray-100') %>">
+        <td class="border p-4"><%= incident.title %></td>
+        <td class="border p-4"><%= incident.description %></td>
+        <td class="border p-4"><%= incident.severity %></td>
+        <td class="border p-4"><%= incident.creator %></td>
+        <td class="border p-4"><%= time_ago_in_words(incident.created_at) %> ago</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
