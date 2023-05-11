@@ -46,6 +46,6 @@ class CreateIncident
   private
 
   def client
-    @client ||= SlackClient.client(@data.dig('team', 'id'))
+    @client ||= SlackClient.client(@data.dig('user', 'team_id'))
   end
 end
