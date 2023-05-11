@@ -1,8 +1,7 @@
 class ResolveCommandError < StandardError; end
 class ResolveCommand
-  def self.call(client_service, data)
+  def self.call(client, data)
     begin
-      client = client_service.client(data.dig('user', 'team_id'))
       # Check if the command is being executed in an incident channel
       incident = fetch_incident(data['channel_id'])
       unless incident

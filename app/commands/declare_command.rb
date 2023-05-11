@@ -1,8 +1,7 @@
 class DeclareCommandError < StandardError; end
 class DeclareCommand
-  def self.call(client_service, data)
+  def self.call(client, data)
     begin
-      client = client_service.client(data['team_id'])
       trigger_id = data['trigger_id']
 
       dialog = {
