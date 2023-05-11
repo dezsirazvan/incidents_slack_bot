@@ -6,7 +6,7 @@ This is a Slack bot built using Ruby on Rails. The bot is designed to listen to 
 [Add bot to a slack workspace](https://slack.com/oauth/v2/authorize?client_id=5240890931682.5253551678529&scope=channels:join,channels:manage,channels:read,channels:write.invites,chat:write,chat:write.public,commands,groups:read,groups:write,im:read,im:write,users:read,users:read.email,groups:history&user_scope=)
 2. Run /rootly declare in any public channel and complete the dialog form with a title, description, and severity level. Only the title is mandatory. It will create a new channel for the incident. You can also run the command in private channels if you add the application to that channels.
 3. Run /rootly resolve in any incident channel. It will send a message with the time consumed to resolve the incident and will archive the channel.
-4. Visit the production url(because I'm using a free version of render, the server is stopping randomly from time to time. Also, the first load takes more time...): [https://rootly-slack-bot.onrender.com/](https://rootly-slack-bot.onrender.com/) in order to see the created incidents. You can also sort them alphabetically ASC/DESC.
+4. Visit the production url(because I'm using a free version of render, the server is stopping randomly from time to time. Also, the first load takes more time...https://community.render.com/t/service-not-ready/11856/9): [https://rootly-slack-bot.onrender.com/](https://rootly-slack-bot.onrender.com/) in order to see the created incidents. You can also sort them alphabetically ASC/DESC.
 
 
 
