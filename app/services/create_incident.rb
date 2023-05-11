@@ -7,6 +7,7 @@ class CreateIncident
   end
 
   def call
+    client = SlackClient.client(@data.dig('user', 'team_id'))
     # Parse the title, description and severity from the dialog submission
     title = @data.dig('submission', 'title')
     description = @data.dig('submission', 'description')
@@ -46,6 +47,6 @@ class CreateIncident
   private
 
   def client
-    @client ||= SlackClient.client(@data.dig('user', 'team_id'))
+    SlackClient.client(@data.dig('user', 'team_id'))
   end
 end
