@@ -15,10 +15,13 @@ class SlackOauthController < ApplicationController
       code: params[:code],
       redirect_uri: slack_oauth_callback_url
     )
-  
 
     if response["ok"]
       access_token = response["access_token"]
+
+      team_id = response.dig('team', 'id')
+      Team.create(team_id: team_id, token: access_token)
+
       incoming_webhook = response["incoming_webhook"]
       bot_user_id = response.dig("bot_user", "id")
       bot_access_token = response.dig("bot_user", "access_token")

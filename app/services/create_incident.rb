@@ -46,6 +46,6 @@ class CreateIncident
   private
 
   def client
-    @client ||= SlackClient.client
+    @client ||= SlackClient.client(@data['team_id'])
   end
 end
