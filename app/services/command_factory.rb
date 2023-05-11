@@ -11,7 +11,7 @@ class CommandFactory
   def self.call(name, data)
     command_class = COMMANDS[name]
     raise ArgumentError.new('Invalid command') unless command_class
-
-    command_class.call(SlackClient.client(data.dig('user', 'team_id')), data)
+    team_id = data.dig('user', 'team_id') || data['team_id']
+    command_class.call(SlackClient.client(team_id), data)
   end
 end
