@@ -22,10 +22,6 @@ class SlackOauthController < ApplicationController
       team_id = response.dig('team', 'id')
       Team.create(team_id: team_id, token: access_token)
 
-      incoming_webhook = response["incoming_webhook"]
-      bot_user_id = response.dig("bot_user", "id")
-      bot_access_token = response.dig("bot_user", "access_token")
-      # Save the access token, incoming webhook URL, bot user ID, and bot access token to the database or session
       flash[:success] = "Authorization succeeded!"
     else
       flash[:error] = "Authorization failed: #{response["error"]}"
