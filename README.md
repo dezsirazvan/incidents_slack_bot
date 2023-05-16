@@ -1,6 +1,5 @@
 # Slack Bot
-This is a Slack bot built using Ruby on Rails. The bot is designed to listen to specific commands like /rootly declare and /rootly resolve.
-
+This is a Slack bot built using Ruby on Rails. The bot is designed to listen to specific commands.
 
 ## Prerequisites
 Before running the bot, you will need the following:
